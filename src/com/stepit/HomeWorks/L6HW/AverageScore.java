@@ -5,15 +5,22 @@ import java.util.Scanner;
 public class AverageScore {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter the number of students in the group: ");
-        int a = input.nextInt();
-        System.out.println("Enter student grades: ");
-        int b = input.nextInt();
 
-        int i = 0;
-        while (i < a) {
-            System.out.println(i);
-            i++;
+        int nrOfStud;
+        System.out.println("Enter the number of students in the group: ");
+        nrOfStud = input.nextInt();
+
+        int[] studGrades = new int[nrOfStud];
+        System.out.println("Enter student grades: ");
+        for (int i = 0; i < studGrades.length; i++) {
+            studGrades[i] = input.nextInt();
         }
+
+        int sumGrade = 0;
+        for (int i = 0; i < studGrades.length; i++) {
+            sumGrade = sumGrade + studGrades[i];
+        }
+
+        System.out.println("The average score of the group is: " + (sumGrade*1f / nrOfStud*1f));
     }
 }
